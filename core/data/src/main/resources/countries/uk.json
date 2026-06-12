@@ -1,0 +1,34 @@
+{
+  "id": "uk-core",
+  "countryCode": "GB",
+  "version": "2026.1",
+  "displayName": "United Kingdom",
+  "regions": [
+    {"code": "GB-EAW", "name": "England and Wales"},
+    {"code": "GB-SCT", "name": "Scotland"},
+    {"code": "GB-NIR", "name": "Northern Ireland"}
+  ],
+  "events": [
+    {"id":"gb-new-year","name":"New Year's Day","classification":"PUBLIC_HOLIDAY","leadDays":7,"rule":{"type":"FIXED","month":1,"day":1,"substitute":"NEXT_WEEKDAY"},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-scotland-jan-2","name":"2 January","classification":"PUBLIC_HOLIDAY","regions":["GB-SCT"],"leadDays":7,"rule":{"type":"FIXED","month":1,"day":2,"substitute":"NEXT_WEEKDAY"},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-st-patricks-day","name":"St Patrick's Day","classification":"PUBLIC_HOLIDAY","regions":["GB-NIR"],"leadDays":7,"rule":{"type":"FIXED","month":3,"day":17,"substitute":"NEXT_WEEKDAY"},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-good-friday","name":"Good Friday","classification":"PUBLIC_HOLIDAY","leadDays":7,"rule":{"type":"EASTER_RELATIVE","offsetDays":-2},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-easter-sunday","name":"Easter Sunday","classification":"RELIGIOUS","leadDays":7,"rule":{"type":"EASTER_RELATIVE","offsetDays":0},"source":{"authority":"Church of England","url":"https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/common-worship/churchs-year/holy-week-and-easter","verifiedOn":"2026-06-08"}},
+    {"id":"gb-easter-monday","name":"Easter Monday","classification":"PUBLIC_HOLIDAY","regions":["GB-EAW","GB-NIR"],"leadDays":7,"rule":{"type":"EASTER_RELATIVE","offsetDays":1},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-early-may","name":"Early May bank holiday","classification":"PUBLIC_HOLIDAY","leadDays":7,"rule":{"type":"NTH_WEEKDAY","month":5,"ordinal":1,"weekday":"MONDAY"},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-spring-bank-holiday","name":"Spring bank holiday","classification":"PUBLIC_HOLIDAY","leadDays":7,"rule":{"type":"NTH_WEEKDAY","month":5,"ordinal":-1,"weekday":"MONDAY"},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-battle-boyne","name":"Battle of the Boyne","classification":"PUBLIC_HOLIDAY","regions":["GB-NIR"],"leadDays":7,"rule":{"type":"FIXED","month":7,"day":12,"substitute":"NEXT_WEEKDAY"},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-summer-bank-holiday-scotland","name":"Summer bank holiday","classification":"PUBLIC_HOLIDAY","regions":["GB-SCT"],"leadDays":7,"rule":{"type":"NTH_WEEKDAY","month":8,"ordinal":1,"weekday":"MONDAY"},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-summer-bank-holiday","name":"Summer bank holiday","classification":"PUBLIC_HOLIDAY","regions":["GB-EAW","GB-NIR"],"leadDays":7,"rule":{"type":"NTH_WEEKDAY","month":8,"ordinal":-1,"weekday":"MONDAY"},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-st-andrews-day","name":"St Andrew's Day","classification":"PUBLIC_HOLIDAY","regions":["GB-SCT"],"leadDays":7,"rule":{"type":"FIXED","month":11,"day":30,"substitute":"NEXT_WEEKDAY"},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-christmas-bank-holiday","name":"Christmas Day bank holiday","classification":"PUBLIC_HOLIDAY","leadDays":21,"rule":{"type":"UK_CHRISTMAS"},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-boxing-day-bank-holiday","name":"Boxing Day bank holiday","classification":"PUBLIC_HOLIDAY","leadDays":21,"rule":{"type":"UK_BOXING_DAY"},"source":{"authority":"GOV.UK","url":"https://www.gov.uk/bank-holidays","verifiedOn":"2026-06-08"}},
+    {"id":"gb-valentines","name":"Valentine's Day","classification":"CULTURAL","leadDays":21,"rule":{"type":"FIXED","month":2,"day":14},"source":{"authority":"Encyclopaedia Britannica","url":"https://www.britannica.com/topic/Valentines-Day","verifiedOn":"2026-06-08"}},
+    {"id":"gb-mothering-sunday","name":"Mothering Sunday","classification":"RELIGIOUS","leadDays":14,"rule":{"type":"MOTHERING_SUNDAY"},"source":{"authority":"Church of England","url":"https://www.churchofengland.org/media/stories-and-features/mothering-sunday-what-are-its-origins-church","verifiedOn":"2026-06-08"}},
+    {"id":"gb-fathers-day","name":"Father's Day","classification":"CULTURAL","leadDays":14,"rule":{"type":"FATHERS_DAY"},"source":{"authority":"UK Parliament","url":"https://commonslibrary.parliament.uk/research-briefings/cdp-2022-0114/","verifiedOn":"2026-06-08"}},
+    {"id":"gb-st-georges-day","name":"St George's Day","classification":"CULTURAL","regions":["GB-EAW"],"leadDays":7,"rule":{"type":"FIXED","month":4,"day":23},"source":{"authority":"Historic England","url":"https://historicengland.org.uk/listing/what-is-designation/heritage-highlights/st-georges-day/","verifiedOn":"2026-06-08"}},
+    {"id":"gb-halloween","name":"Halloween","classification":"CULTURAL","leadDays":7,"rule":{"type":"FIXED","month":10,"day":31},"source":{"authority":"Encyclopaedia Britannica","url":"https://www.britannica.com/topic/Halloween","verifiedOn":"2026-06-08"}},
+    {"id":"gb-christmas","name":"Christmas Day","classification":"RELIGIOUS","leadDays":21,"rule":{"type":"FIXED","month":12,"day":25},"source":{"authority":"Church of England","url":"https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/common-worship/churchs-year/christmas","verifiedOn":"2026-06-08"}}
+  ]
+}
+

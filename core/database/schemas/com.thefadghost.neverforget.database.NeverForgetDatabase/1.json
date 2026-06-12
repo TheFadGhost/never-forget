@@ -1,0 +1,593 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "5e56a103a247871cf607c06a72a18d37",
+    "entities": [
+      {
+        "tableName": "people",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `displayName` TEXT NOT NULL, `normalizedName` TEXT NOT NULL, `relationship` TEXT NOT NULL, `customRelationship` TEXT, `birthdayMonth` INTEGER, `birthdayDay` INTEGER, `birthYear` INTEGER, `leapDayPolicy` TEXT NOT NULL, `notes` TEXT NOT NULL, `contactLookupKey` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "normalizedName",
+            "columnName": "normalizedName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "relationship",
+            "columnName": "relationship",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "customRelationship",
+            "columnName": "customRelationship",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "birthdayMonth",
+            "columnName": "birthdayMonth",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "birthdayDay",
+            "columnName": "birthdayDay",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "birthYear",
+            "columnName": "birthYear",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "leapDayPolicy",
+            "columnName": "leapDayPolicy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contactLookupKey",
+            "columnName": "contactLookupKey",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "events",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `normalizedTitle` TEXT NOT NULL, `type` TEXT NOT NULL, `startEpochDay` INTEGER NOT NULL, `startMinuteOfDay` INTEGER, `personId` INTEGER, `recurrenceType` TEXT NOT NULL, `recurrenceMonth` INTEGER, `recurrenceOrdinal` INTEGER, `recurrenceWeekday` INTEGER, `recurrenceOffsetDays` INTEGER NOT NULL, `classification` TEXT NOT NULL, `countryCode` TEXT, `regionCode` TEXT, `notes` TEXT NOT NULL, `giftIdeas` TEXT NOT NULL, `giftBudgetMinor` INTEGER, `link` TEXT NOT NULL, `address` TEXT NOT NULL, `reminderIntensity` TEXT NOT NULL, `leadDays` INTEGER NOT NULL, `dailyMinute` INTEGER NOT NULL, `eveningMinute` INTEGER NOT NULL, `overrideQuietHours` INTEGER NOT NULL, `hidden` INTEGER NOT NULL, `createdAtEpochMillis` INTEGER NOT NULL, `updatedAtEpochMillis` INTEGER NOT NULL, FOREIGN KEY(`personId`) REFERENCES `people`(`id`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "normalizedTitle",
+            "columnName": "normalizedTitle",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startEpochDay",
+            "columnName": "startEpochDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startMinuteOfDay",
+            "columnName": "startMinuteOfDay",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "personId",
+            "columnName": "personId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "recurrenceType",
+            "columnName": "recurrenceType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "recurrenceMonth",
+            "columnName": "recurrenceMonth",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "recurrenceOrdinal",
+            "columnName": "recurrenceOrdinal",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "recurrenceWeekday",
+            "columnName": "recurrenceWeekday",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "recurrenceOffsetDays",
+            "columnName": "recurrenceOffsetDays",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "classification",
+            "columnName": "classification",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countryCode",
+            "columnName": "countryCode",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "regionCode",
+            "columnName": "regionCode",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "giftIdeas",
+            "columnName": "giftIdeas",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "giftBudgetMinor",
+            "columnName": "giftBudgetMinor",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "link",
+            "columnName": "link",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "address",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reminderIntensity",
+            "columnName": "reminderIntensity",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "leadDays",
+            "columnName": "leadDays",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailyMinute",
+            "columnName": "dailyMinute",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "eveningMinute",
+            "columnName": "eveningMinute",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "overrideQuietHours",
+            "columnName": "overrideQuietHours",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hidden",
+            "columnName": "hidden",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAtEpochMillis",
+            "columnName": "createdAtEpochMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAtEpochMillis",
+            "columnName": "updatedAtEpochMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_events_personId",
+            "unique": false,
+            "columnNames": [
+              "personId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_events_personId` ON `${TABLE_NAME}` (`personId`)"
+          },
+          {
+            "name": "index_events_startEpochDay",
+            "unique": false,
+            "columnNames": [
+              "startEpochDay"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_events_startEpochDay` ON `${TABLE_NAME}` (`startEpochDay`)"
+          },
+          {
+            "name": "index_events_type",
+            "unique": false,
+            "columnNames": [
+              "type"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_events_type` ON `${TABLE_NAME}` (`type`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "people",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "personId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "occurrence_state",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`eventId` INTEGER NOT NULL, `occurrenceEpochDay` INTEGER NOT NULL, `done` INTEGER NOT NULL, `giftBought` INTEGER NOT NULL, `plansMade` INTEGER NOT NULL, `acknowledgedAtEpochMillis` INTEGER, PRIMARY KEY(`eventId`, `occurrenceEpochDay`), FOREIGN KEY(`eventId`) REFERENCES `events`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "eventId",
+            "columnName": "eventId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "occurrenceEpochDay",
+            "columnName": "occurrenceEpochDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "done",
+            "columnName": "done",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "giftBought",
+            "columnName": "giftBought",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plansMade",
+            "columnName": "plansMade",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "acknowledgedAtEpochMillis",
+            "columnName": "acknowledgedAtEpochMillis",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "eventId",
+            "occurrenceEpochDay"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_occurrence_state_eventId",
+            "unique": false,
+            "columnNames": [
+              "eventId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_occurrence_state_eventId` ON `${TABLE_NAME}` (`eventId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "events",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "eventId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "checklist_items",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `eventId` INTEGER NOT NULL, `label` TEXT NOT NULL, `checked` INTEGER NOT NULL, `position` INTEGER NOT NULL, FOREIGN KEY(`eventId`) REFERENCES `events`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "eventId",
+            "columnName": "eventId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "label",
+            "columnName": "label",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "checked",
+            "columnName": "checked",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "position",
+            "columnName": "position",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_checklist_items_eventId",
+            "unique": false,
+            "columnNames": [
+              "eventId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_checklist_items_eventId` ON `${TABLE_NAME}` (`eventId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "events",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "eventId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "followed_name_days",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`canonicalName` TEXT NOT NULL, `personId` INTEGER, `preferredMonth` INTEGER NOT NULL, `preferredDay` INTEGER NOT NULL, `enabled` INTEGER NOT NULL, PRIMARY KEY(`canonicalName`))",
+        "fields": [
+          {
+            "fieldPath": "canonicalName",
+            "columnName": "canonicalName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "personId",
+            "columnName": "personId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "preferredMonth",
+            "columnName": "preferredMonth",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredDay",
+            "columnName": "preferredDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enabled",
+            "columnName": "enabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "canonicalName"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_followed_name_days_personId",
+            "unique": false,
+            "columnNames": [
+              "personId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_followed_name_days_personId` ON `${TABLE_NAME}` (`personId`)"
+          }
+        ]
+      },
+      {
+        "tableName": "scheduled_reminders",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`requestCode` INTEGER NOT NULL, `eventId` INTEGER NOT NULL, `occurrenceEpochDay` INTEGER NOT NULL, `triggerAtEpochMillis` INTEGER NOT NULL, `kind` TEXT NOT NULL, `status` TEXT NOT NULL, PRIMARY KEY(`requestCode`))",
+        "fields": [
+          {
+            "fieldPath": "requestCode",
+            "columnName": "requestCode",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "eventId",
+            "columnName": "eventId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "occurrenceEpochDay",
+            "columnName": "occurrenceEpochDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "triggerAtEpochMillis",
+            "columnName": "triggerAtEpochMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kind",
+            "columnName": "kind",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "requestCode"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_scheduled_reminders_eventId",
+            "unique": false,
+            "columnNames": [
+              "eventId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_scheduled_reminders_eventId` ON `${TABLE_NAME}` (`eventId`)"
+          },
+          {
+            "name": "index_scheduled_reminders_triggerAtEpochMillis",
+            "unique": false,
+            "columnNames": [
+              "triggerAtEpochMillis"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_scheduled_reminders_triggerAtEpochMillis` ON `${TABLE_NAME}` (`triggerAtEpochMillis`)"
+          }
+        ]
+      },
+      {
+        "tableName": "country_selections",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `countryCode` TEXT NOT NULL, `regionCode` TEXT, `enabled` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countryCode",
+            "columnName": "countryCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "regionCode",
+            "columnName": "regionCode",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "enabled",
+            "columnName": "enabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5e56a103a247871cf607c06a72a18d37')"
+    ]
+  }
+}

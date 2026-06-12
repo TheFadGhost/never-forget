@@ -1,0 +1,15 @@
+.worktrees/
+*.iml
+.gradle/
+.idea/
+local.properties
+build/
+artifacts/
+release/
+captures/
+.externalNativeBuild/
+.cxx/
+keystore.properties
+*.jks
+*.keystore
+
